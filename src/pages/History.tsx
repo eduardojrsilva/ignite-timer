@@ -1,9 +1,7 @@
-const History: React.FC = () => {
-  return (
-    <h1>
-      History
-    </h1>
-  );
-};
+import React from 'react'
 
-export default History;
+const History: React.FC = () => {
+  return <h1>History</h1>
+}
+
+export default History
