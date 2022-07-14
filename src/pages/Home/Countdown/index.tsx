@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { differenceInSeconds } from 'date-fns'
 
-import { CyclesContext } from '..'
+import { CyclesContext } from '../../../contexts/CyclesContext'
 
 import { CountdownContainer, Separator } from './styles'
 
@@ -55,6 +55,12 @@ const Countdown: React.FC = () => {
 
   const minutes = String(minutesAmount).padStart(2, '0')
   const seconds = String(secondsAmount).padStart(2, '0')
+
+  useEffect(() => {
+    if (activeCycle) {
+      document.title = `${minutes}:${seconds}`
+    }
+  }, [activeCycle, minutes, seconds])
 
   return (
     <CountdownContainer>
